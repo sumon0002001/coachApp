@@ -1,6 +1,17 @@
 package com.rawshan.spring;
 
 public class CricketCoach implements Coach {
+	
+	private FortuneService fortuneService;
+	
+	public CricketCoach() {
+		
+	}
+
+	public CricketCoach(FortuneService fortuneService) {
+		
+		this.fortuneService = fortuneService;
+	}
 
 	@Override
 	public String getDailyWorkout() {
@@ -9,8 +20,8 @@ public class CricketCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return "Yeo Yeo " + fortuneService.getFortune();
 	}
 
 }
